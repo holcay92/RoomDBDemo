@@ -38,6 +38,27 @@
         android:hint="Enter Name" />
     <TextView
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/etUpdateSurname"
+        app:layout_constraintTop_toTopOf="@id/etUpdateSurname"
+        android:id="@+id/tvSurnameLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Surname"
+        android:textSize="18sp" />
+
+    <EditText
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateName"
+        app:layout_constraintStart_toEndOf="@id/tvSurnameLabel"
+        android:id="@+id/etUpdateSurname"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Surname" />
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/etUpdateEmailId"
         app:layout_constraintTop_toTopOf="@id/etUpdateEmailId"
         android:id="@+id/tvEmailLabel"
@@ -48,7 +69,7 @@
 
     <EditText
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etUpdateName"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateSurname"
         app:layout_constraintStart_toEndOf="@id/tvEmailLabel"
         android:id="@+id/etUpdateEmailId"
         android:layout_width="0dp"
@@ -56,9 +77,29 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Enter Email ID" />
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/etUpdateAge"
+        app:layout_constraintTop_toTopOf="@id/etUpdateAge"
+        android:id="@+id/tvAgeLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="18sp" />
+
+    <EditText
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateEmailId"
+        app:layout_constraintStart_toEndOf="@id/tvEmailLabel"
+        android:id="@+id/etUpdateAge"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Age" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/etUpdateEmailId"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateAge"
         app:layout_constraintEnd_toStartOf="@id/tvCancel"
         android:id="@+id/tvUpdate"
         android:layout_width="wrap_content"
@@ -71,7 +112,7 @@
         android:textStyle="bold" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/etUpdateEmailId"
+        app:layout_constraintTop_toBottomOf="@id/etUpdateAge"
         app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/tvCancel"
         android:layout_width="wrap_content"

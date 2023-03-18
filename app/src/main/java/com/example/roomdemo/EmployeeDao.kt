@@ -11,20 +11,17 @@ import kotlinx.coroutines.flow.Flow
 interface EmployeeDao {
 
     @Insert
-    suspend fun insertEmployee(employeeEntity: EmployeeEntity)
-
-    @Delete
-    suspend fun deleteEmployee(employeeEntity: EmployeeEntity)
+    suspend fun insert(employeeEntity: EmployeeEntity)
 
     @Update
-    suspend fun updateEmployee(employeeEntity: EmployeeEntity)
+    suspend fun update(employeeEntity: EmployeeEntity)
 
-    @Query("SELECT * FROM 'employee-table'")
-    fun fetchAllEmployees(): Flow<List<EmployeeEntity>>
-    // Flow is a class that allows you to emit multiple values sequentially,
-    // just like a stream (sequence of emitted values).
-    // when the data changes, the flow will emit the new data.
+    @Delete
+    suspend fun delete(employeeEntity: EmployeeEntity)
 
-    @Query("SELECT * FROM 'employee-table' WHERE id = :id")
-    fun fetchEmployeeById(id:Int): Flow<List<EmployeeEntity>>
+    @Query("Select * from `employee-table`")
+    fun fetchAllEmployee():Flow<List<EmployeeEntity>>
+
+    @Query("Select * from `employee-table` where id=:id")
+    fun fetchEmployeeById(id:Int):Flow<EmployeeEntity>
 }
