@@ -1,17 +1,15 @@
 package com.example.roomdemo
 
-import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roomdemo.databinding.ActivityMainBinding
 import com.example.roomdemo.databinding.ItemsRowBinding
 
 class ItemAdapter(
     private val items: ArrayList<EmployeeEntity>,
-    private val updateListener: (id: Int) -> Unit,
-    private val deleteListener: (id: Int) -> Unit
+   // private val updateListener: (id: Int) -> Unit,
+   // private val deleteListener: (id: Int) -> Unit
 ) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     class ViewHolder(binding: ItemsRowBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -20,6 +18,8 @@ class ItemAdapter(
         val tvSurname = binding.tvSurname
         val tvAge = binding.tvAge
         val tvEmail = binding.tvEmail
+        val ivEdit = binding.ivEdit
+        val ivDelete = binding.ivDelete
 
     }
 
@@ -56,13 +56,13 @@ class ItemAdapter(
             )
         }
 
-        holder.llMain.setOnClickListener {
-            updateListener.invoke(item.id)
+        holder.ivEdit.setOnClickListener {
+           // updateListener(item.id)
         }
-        holder.llMain.setOnLongClickListener {
-            deleteListener(item.id)
-            true
+        holder.ivDelete.setOnClickListener {
+          //  deleteListener(item.id)
         }
+
 
 
     }
