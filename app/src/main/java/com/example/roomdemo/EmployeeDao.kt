@@ -21,6 +21,7 @@ interface EmployeeDao {
 
     @Query("Select * from `employee-table`")
     fun fetchAllEmployee():Flow<List<EmployeeEntity>>
+    // we don't use suspend here because we are using flow. it takes care of the background thread
 
     @Query("Select * from `employee-table` where id=:id")
     fun fetchEmployeeById(id:Int):Flow<EmployeeEntity>
